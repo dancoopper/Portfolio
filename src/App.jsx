@@ -37,81 +37,96 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen scanlines relative bg-terminal-black text-hacker-green selection:bg-hacker-green selection:text-black">
+    <div className="min-h-screen relative font-sans">
       <Header />
 
-      <main className="px-4 relative z-10">
-        <ModuleSection id="module-1" title="01.PERSONAL">
-          <div className="mb-8">
-            <TypingEffect text="> INITIALIZING USER PROFILE..." speed={50} className="text-hacker-green font-bold text-xl md:text-2xl mb-4 text-shadow" />
+      <main className="px-6 relative z-10 transition-colors">
+        <ModuleSection id="module-1" subtitle="Introduction" title="Personal Profile.">
+          <div className="mb-10">
+            <TypingEffect text="Initializing environment..." speed={40} className="text-zinc-100 font-medium text-lg md:text-xl" />
           </div>
           <MarkdownRenderer content={content.personal} />
         </ModuleSection>
 
-        <ModuleSection id="module-2" title="02.ACADEMIC">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+        <ModuleSection id="module-2" subtitle="Education" title="Academic History.">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
             <div className="lg:col-span-2">
               <MarkdownRenderer content={content.academic} />
             </div>
-            <div className="border border-cyber-blue/50 bg-cyber-blue/5 p-6 rounded relative overflow-hidden group shadow-[0_0_15px_rgba(0,228,255,0.1)] hover:shadow-[0_0_25px_rgba(0,228,255,0.3)] transition-all">
-              <div className="absolute inset-x-0 bottom-0 h-1 bg-cyber-blue animate-pulse"></div>
-              <h3 className="text-cyber-blue font-bold mb-6 relative z-10 uppercase tracking-widest text-sm flex items-center">
-                <span className="w-2 h-2 bg-cyber-blue rounded-full mr-2 animate-ping"></span>
-                System.Transcript
+            <div className="border border-white/10 bg-zinc-900/50 p-6 rounded-2xl relative overflow-hidden group shadow-xl">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <h3 className="text-zinc-100 font-bold mb-6 text-sm uppercase tracking-wide flex items-center">
+                <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center mr-3">
+                  <div className="w-2 h-2 bg-primary rounded-full"></div>
+                </div>
+                Academic Transcript
               </h3>
-              <div className="flex flex-col space-y-4 relative z-10 text-sm font-mono">
-                <div className="flex justify-between border-b border-cyber-blue/20 pb-2">
-                  <span className="text-cyber-blue/80">Data Structures</span><span className="text-hacker-green font-bold">A+</span>
+              <div className="flex flex-col space-y-4 relative z-10 text-sm">
+                <div className="flex justify-between items-center group/item hover:bg-white/5 p-2 rounded-lg transition-colors">
+                  <span className="text-zinc-400 font-medium">Data Structures</span>
+                  <span className="text-primary font-bold px-2 py-0.5 bg-primary/10 rounded">A+</span>
                 </div>
-                <div className="flex justify-between border-b border-cyber-blue/20 pb-2">
-                  <span className="text-cyber-blue/80">Algorithms</span><span className="text-hacker-green font-bold">A</span>
+                <div className="flex justify-between items-center group/item hover:bg-white/5 p-2 rounded-lg transition-colors">
+                  <span className="text-zinc-400 font-medium">Algorithms</span>
+                  <span className="text-zinc-300 font-bold px-2 py-0.5 bg-white/5 rounded">A</span>
                 </div>
-                <div className="flex justify-between border-b border-cyber-blue/20 pb-2">
-                  <span className="text-cyber-blue/80">Operating Systems</span><span className="text-hacker-green font-bold">A</span>
+                <div className="flex justify-between items-center group/item hover:bg-white/5 p-2 rounded-lg transition-colors">
+                  <span className="text-zinc-400 font-medium">Operating Systems</span>
+                  <span className="text-zinc-300 font-bold px-2 py-0.5 bg-white/5 rounded">A</span>
                 </div>
-                <div className="flex justify-between border-b border-cyber-blue/20 pb-2">
-                  <span className="text-cyber-blue/80">Distributed Systems</span><span className="text-hacker-green font-bold">A+</span>
+                <div className="flex justify-between items-center group/item hover:bg-white/5 p-2 rounded-lg transition-colors">
+                  <span className="text-zinc-400 font-medium">Distributed Systems</span>
+                  <span className="text-primary font-bold px-2 py-0.5 bg-primary/10 rounded">A+</span>
                 </div>
               </div>
             </div>
           </div>
         </ModuleSection>
 
-        <ModuleSection id="module-3" title="03.PROJECTS">
-          <div className="mb-8 flex gap-3 flex-wrap bg-hacker-green/5 p-4 border border-hacker-green/20 rounded">
-            <div className="w-full text-xs text-hacker-green/50 mb-2 uppercase tracking-wider font-bold">Detected Technologies</div>
-            <SkillBadge skill="React" type="blue" />
+        <ModuleSection id="module-3" subtitle="Portfolio" title="Work Samples.">
+          <div className="mb-10 flex gap-3 flex-wrap">
+            <SkillBadge skill="React" type="primary" />
             <SkillBadge skill="Python" type="default" />
-            <SkillBadge skill="Rust" type="white" />
-            <SkillBadge skill="Go" type="blue" />
-            <SkillBadge skill="TailwindCSS" type="blue" />
+            <SkillBadge skill="Rust" type="default" />
+            <SkillBadge skill="Go" type="primary" />
+            <SkillBadge skill="TailwindCSS" type="accent" />
             <SkillBadge skill="Node.js" type="default" />
-            <SkillBadge skill="Docker" type="blue" />
-            <SkillBadge skill="WebGL" type="white" />
+            <SkillBadge skill="Docker" type="primary" />
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 [&>.markdown-body>h3]:mt-0 [&>.markdown-body]:grid [&>.markdown-body]:gap-6 [&>.markdown-body]:grid-cols-1">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 [&>.max-w-none>h3]:mt-0">
             <MarkdownRenderer content={content.work_samples} />
           </div>
         </ModuleSection>
 
-        <ModuleSection id="module-4" title="04.CAPSTONE">
-          <div className="w-full bg-[#050505] p-6 md:p-10 border border-hacker-green shadow-[0_0_20px_rgba(0,255,65,0.15)] relative">
-            <div className="absolute top-0 right-0 bg-hacker-green text-black px-2 py-1 text-xs font-bold uppercase tracking-wider">Classified</div>
+        <ModuleSection id="module-4" subtitle="Architecture" title="Capstone Project.">
+          <div className="w-full bg-[#0a0a0c] p-8 md:p-12 border border-white/5 rounded-2xl shadow-xl relative mt-4">
+            <div className="absolute -top-3 left-8 bg-zinc-800 border border-white/10 text-zinc-300 px-3 py-1 text-xs font-semibold rounded-full shadow-lg">Documentation System</div>
             <MarkdownRenderer content={content.capstone} />
           </div>
         </ModuleSection>
 
-        <ModuleSection id="module-5" title="05.PROFESSIONAL">
+        <ModuleSection id="module-5" subtitle="History" title="Professional Info.">
           <MarkdownRenderer content={content.professional} />
         </ModuleSection>
       </main>
 
       <CommandPalette />
 
-      <footer className="py-8 mt-12 text-center text-xs text-hacker-green/40 border-t border-hacker-green/20 relative z-10 bg-terminal-black/80 flex flex-col items-center">
-        <div className="w-px h-12 bg-gradient-to-b from-hacker-green/50 to-transparent mb-4"></div>
-        <p className="tracking-widest uppercase">&gt; Press <kbd className="border border-hacker-green/30 px-1 rounded bg-hacker-green/10 text-hacker-green/80">Ctrl+K</kbd> to open Command Palette.</p>
-        <p className="mt-4 opacity-50">© {new Date().getFullYear()} SYS.ADMIN. END OF TRANSMISSION.</p>
+      <footer className="py-12 mt-20 border-t border-white/5 bg-zinc-950 flex flex-col items-center">
+        <div className="flex items-center space-x-2 text-zinc-500 text-sm mb-6">
+          <span>Press</span>
+          <kbd className="font-sans px-2 py-1 rounded-md bg-zinc-800 border border-zinc-700 text-zinc-300 shadow-sm text-xs font-medium">Ctrl</kbd>
+          <span>+</span>
+          <kbd className="font-sans px-2 py-1 rounded-md bg-zinc-800 border border-zinc-700 text-zinc-300 shadow-sm text-xs font-medium">K</kbd>
+          <span>to navigate</span>
+        </div>
+        <div className="text-zinc-600 text-xs flex space-x-4">
+          <span>© {new Date().getFullYear()} DEV.STUDIO</span>
+          <span>•</span>
+          <a href="#" className="hover:text-zinc-300 transition-colors">Privacy</a>
+          <span>•</span>
+          <a href="#" className="hover:text-zinc-300 transition-colors">Terms</a>
+        </div>
       </footer>
     </div>
   );

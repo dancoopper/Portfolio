@@ -1,13 +1,19 @@
 import React from 'react';
 
-const ModuleSection = ({ id, title, children }) => {
+const ModuleSection = ({ id, title, subtitle, children }) => {
     return (
-        <section id={id} className="min-h-screen py-24 flex flex-col justify-center border-b border-hacker-green/20 relative relative -mx-4 px-4 overflow-hidden">
-            <div className="absolute top-8 left-4 md:left-12 text-hacker-green/10 font-bold text-6xl md:text-9xl select-none z-0 pointer-events-none whitespace-nowrap overflow-hidden tracking-tighter mix-blend-screen">
-                {title}
-            </div>
-            <div className="relative z-10 w-full max-w-5xl mx-auto backdrop-blur-sm bg-terminal-black/40 p-6 md:p-8 rounded-sm border border-transparent hover:border-hacker-green/30 transition-all duration-500">
-                {children}
+        <section id={id} className="min-h-screen py-32 flex flex-col justify-center relative">
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] pointer-events-none -z-10 mix-blend-screen"></div>
+            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[120px] pointer-events-none -z-10 mix-blend-screen"></div>
+
+            <div className="relative z-10 w-full max-w-4xl mx-auto">
+                <div className="mb-12">
+                    <h2 className="text-sm font-bold tracking-widest text-primary uppercase mb-2 block">{subtitle}</h2>
+                    <h1 className="text-4xl md:text-5xl font-bold text-zinc-100 tracking-tight">{title}</h1>
+                </div>
+                <div className="glass-panel p-8 md:p-12 rounded-2xl shadow-2xl">
+                    {children}
+                </div>
             </div>
         </section>
     );
