@@ -5,8 +5,7 @@
 
 ### Metrics
 - **Cumulative GPA**: 3.9 / 4.0
-- **Honors**: Summa Cum Laude
 
 ### Awards
 - Dean's List (6 Semesters)
-- Outstanding Senior Award in Computer Science
+- 3rd Place in Canada in IEEEXtreme
