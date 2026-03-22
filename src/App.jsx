@@ -100,12 +100,12 @@ function App() {
 
 
         {/* TODO: Add real capstone project info */}
-        {/* <ModuleSection id="module-4" subtitle="Architecture" title="Capstone Project.">
+        <ModuleSection id="module-4" subtitle="Architecture" title="Capstone Project.">
           <div className="w-full bg-[#0a0a0c] p-8 md:p-12 border border-white/5 rounded-2xl shadow-xl relative mt-4">
             <div className="absolute -top-3 left-8 bg-zinc-800 border border-white/10 text-zinc-300 px-3 py-1 text-xs font-semibold rounded-full shadow-lg">Documentation System</div>
             <MarkdownRenderer content={content.capstone} />
           </div>
-        </ModuleSection> */}
+        </ModuleSection>
 
         <ModuleSection id="module-5" subtitle="History" title="Professional Info.">
           <MarkdownRenderer content={content.professional} />
